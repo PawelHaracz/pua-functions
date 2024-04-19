@@ -1,0 +1,21 @@
+{
+  "bindings": [
+    {
+      "name": "QueueItem",
+      "type": "queueTrigger",
+      "direction": "in",
+      "queueName": "employees",
+      "connection": "AzureWebJobsStorage"
+    },
+    { 
+      "name": "EmployeeDocument",
+      "type": "cosmosDB",
+      "databaseName": "Employees",
+      "containerName": "datas",
+      "createIfNotExists": true,
+      "partitionKey": "/company",
+      "connection": "CosmosDBConnectionString",
+      "direction":"out" 
+    } 
+  ]
+}
